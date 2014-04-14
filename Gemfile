@@ -33,6 +33,8 @@ group :development do
   gem 'rails_layout'
 end
 
+#use postgres for deploying to heroku
 group :production do
   gem 'thin'
+  gem 'pg'
 end

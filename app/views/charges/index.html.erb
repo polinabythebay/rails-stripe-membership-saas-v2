@@ -1,14 +1,70 @@
 
 
 <%= form_tag charges_path do %>
-  <article>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+
+<div class="container">
+	<div class="row">
+		<ul class="thumbnails">
+
+
+		<li class="span4">
+              <div class="thumbnail">
+                <!img src="http://placehold.it/320x200" alt="ALT NAME">
+              
+                <%= image_tag "plainbagel.jpg" , size: "600x500"%>
+                <div class="caption">
+                  <h3>Plain bagel</h3>
+                  <p>Amount: $1.00 </p>
+                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"></script>
+          data-description="I would like a plain bagel!"
+          data-amount="100"></script>
+                </div>
+              </div>
+            </li>
+
+            <li class="span4">
+              <div class="thumbnail">
+                <!img src="http://placehold.it/320x200" alt="ALT NAME">
+ 			
+ 				<%= image_tag "fancybagel.jpg" , size: "600x500"%>
+                <div class="caption">
+
+                  <h3>Fancy Bagel</h3>
+                  <p>Amount: $3.00 </p>
+                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="I would like a fancy bagel!"
+          data-amount="300"></script>
+                </div>
+              </div>
+            </li>
+
+            
+
+            <li class="span4">
+              <div class="thumbnail">
+                <!img src="http://placehold.it/320x200" alt="ALT NAME">
+                 <%= image_tag "extrafancybagel.jpg" , size: "600x500"%>
+
+                <div class="caption">
+
+                  <h3>Extra Fancy Bagel</h3>
+                  <p>Amount: $7.00 </p>
+                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="I would like an extra fancy bagel!"
+          data-amount="700"></script>
+                </div>
+              </div>
+            </li>
+
+            
+
+        </ul>
+	</div>
+</div>
+
+
 <% end %>
